@@ -14,7 +14,7 @@ let quotesFunction = async () => {
 }
 console.log(quotesFunction().then((data) => {
     let quoteId = document.getElementById("quote");
-    quoteId.innerHTML = "👉🏻"+data.content+"👈🏻";
+    quoteId.innerHTML = "👉🏻" + data.content + "👈🏻";
 }));
 
 
@@ -64,11 +64,28 @@ if (localStorage.length != 0) {
     for (let i of localStorageArray) {
         let checkboxId = document.getElementById(`checkBox${i.key}`);
         let inputId = document.getElementById(`input${i.key}`);
-        checkboxId.addEventListener("change", () => {
+        let modalYesId = document.getElementById("modalYes");
+        let modalNoId = document.getElementById("modalNo");
+        checkboxId.setAttribute("data-bs-toggle", "modal");
+        checkboxId.setAttribute("data-bs-target", "#exampleModal");
+        checkboxId.addEventListener("click", () => {
             if (checkboxId.checked) {
                 inputId.style.textDecoration = "line-through";
-            } else {
-                inputId.style.textDecoration = "none";
+                modalYesId.addEventListener("click", () => {
+                    localStorage.removeItem(i.key);
+                    location.reload();
+                })
+                modalNoId.addEventListener("click", () => {
+                    checkboxId.checked = false;
+                    inputId.style.textDecoration = "none";
+                })
+                let modalId = document.getElementById("exampleModal");
+                window.addEventListener("click", (e) => {
+                    if (e.target == modalId) {
+                        checkboxId.checked = false;
+                        inputId.style.textDecoration = "none";
+                    }
+                })
             }
         })
     }
