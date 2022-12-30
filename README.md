@@ -2,7 +2,7 @@
 ### Hosted URL: https://phoenix6296.github.io/notes-app/
 
 ### How this Works:
-<img src="https://im2.ezgif.com/tmp/ezgif-2-a92fb3c499.gif" alt="Working Model"/>
+<img src="./working.gif"/>
 
 
 ### How to get Started:
