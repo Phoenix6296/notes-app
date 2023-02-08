@@ -12,6 +12,6 @@
 4. Now you are good to go.
 
 ### Future Improvements:
-1. Edit feature of the Notes.
+1. Edit feature of the Notes. --> Added this feature.
 2. Dark mode can be introduced.
-2. This project can be optimised using a library(E.g. React, Angular, Vue).
+3. This project can be optimised using a library(E.g. React, Angular, Vue).
